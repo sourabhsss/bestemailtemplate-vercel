@@ -86,6 +86,7 @@ export const DirectionAwareHover = ({
               ease: "easeOut",
             }}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt="image"
               className={cn(
