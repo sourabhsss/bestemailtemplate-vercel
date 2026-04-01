@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getOrganizationSchema, getWebSiteSchema } from "@/lib/structured-data";
 import "./globals.css";
 
@@ -101,6 +102,7 @@ export default function RootLayout({
           `}
         </Script>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
