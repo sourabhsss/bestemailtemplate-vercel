@@ -100,7 +100,7 @@ export function getTemplates(): Template[] {
     slug: row['Slug'] || '',
     description: stripHtmlTags(row['Description - Template'] || ''),
     category: stripHtmlTags(row['Industry - Template'] || ''), // Primary category
-    thumbnailUrl: row['Template Image'] || row['Image URL - Template'] || '',
+    thumbnailUrl: row['Template Image Path'] ? `/${row['Template Image Path'].replace(/^images\//, 'images/templates/')}` : (row['Template Image'] || row['Image URL - Template'] || ''),
     isPremium: false, // Can be extended based on data
     useCase: stripHtmlTags(row['Use Case - Template'] || ''),
     industry: stripHtmlTags(row['Industry - Template'] || ''),

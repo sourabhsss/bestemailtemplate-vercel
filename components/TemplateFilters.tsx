@@ -28,15 +28,15 @@ export function TemplateFilters({
   const useCasesCol2 = useCases.slice(midPoint);
 
   return (
-    <div className="bg-background border-b border-border" id="templates">
+    <div className="bg-background border-b border-border bg-linen" id="templates">
       <div className="mx-auto max-w-7xl px-4">
         {/* Top Category Buttons */}
         <div className={`flex items-center justify-center gap-6 py-4 ${isExpanded ? 'border-b border-border' : ''}`}>
           {topCategories.map((category) => (
             <Link key={category} href={`/templates/${slugify(category)}`}>
               <Button
-                variant="secondary"
-                className="px-6 py-2 text-sm font-medium bg-muted hover:bg-muted/80"
+                variant="outline"
+                className="px-6 py-2 text-sm font-medium border-border text-foreground hover:bg-primary hover:text-primary-foreground"
               >
                 {category}
               </Button>

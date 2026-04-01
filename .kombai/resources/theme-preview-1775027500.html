@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theme Preview — Best Email Template</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&family=Abril+Fatface&family=Open+Sans:wght@300;400;500;600;700&family=Staatliches&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========================================================= */
+/*  THEME DEFINITIONS                                        */
+/* ========================================================= */
+
+/* --- THEME 1: Neon Maximalist --- */
+[data-theme="neon-maximalist"] {
+  --primary: #BF00FF;
+  --primary-hover: #A000D9;
+  --primary-light: #F4D4FF;
+  --primary-dark: #8000AA;
+  --secondary: #FC0FC0;
+  --secondary-light: #FFD7F5;
+  --accent: #FFBF00;
+  --accent-light: #FFF3D4;
+  --foreground: #F8FAFC;
+  --foreground-secondary: #CBD5E1;
+  --foreground-muted: #94A3B8;
+  --background: #0A0A1A;
+  --background-secondary: #111128;
+  --background-card: #161636;
+  --background-card-hover: #1C1C44;
+  --border: #2D2D5E;
+  --border-light: #1F1F4A;
+  --success: #22C55E;
+  --warning: #FBBF24;
+  --destructive: #EF4444;
+  --shadow-color: rgba(191, 0, 255, 0.15);
+  --shadow-accent: rgba(252, 15, 192, 0.1);
+  --gradient-primary: linear-gradient(135deg, #BF00FF 0%, #FC0FC0 50%, #FFBF00 100%);
+  --gradient-card: linear-gradient(145deg, #161636, #1C1C44);
+  --gradient-hero: linear-gradient(135deg, #0A0A1A 0%, #1a0a2e 40%, #2a0a1e 100%);
+  --ring: #BF00FF;
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Source Sans 3', sans-serif;
+  --heading-letter-spacing: 0.04em;
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+[data-theme="neon-maximalist"][data-mode="light"] {
+  --foreground: #1A1A2E;
+  --foreground-secondary: #3D3D5C;
+  --foreground-muted: #6B6B8A;
+  --background: #FAF8FF;
+  --background-secondary: #F0ECFF;
+  --background-card: #FFFFFF;
+  --background-card-hover: #F8F4FF;
+  --border: #E0D4F5;
+  --border-light: #EDE6F9;
+  --shadow-color: rgba(191, 0, 255, 0.08);
+  --shadow-accent: rgba(252, 15, 192, 0.06);
+  --gradient-card: linear-gradient(145deg, #FFFFFF, #F8F4FF);
+  --gradient-hero: linear-gradient(135deg, #FAF8FF 0%, #F0E6FF 40%, #FFE6F5 100%);
+}
+
+/* --- THEME 2: Midnight Neumorphic --- */
+[data-theme="midnight-neumorphic"] {
+  --primary: #7C8AFF;
+  --primary-hover: #6370E0;
+  --primary-light: #E0E4FF;
+  --primary-dark: #4A54CC;
+  --secondary: #64FFDA;
+  --secondary-light: #D4FFF2;
+  --accent: #FFD54F;
+  --accent-light: #FFF8E1;
+  --foreground: #E8ECF1;
+  --foreground-secondary: #B0BAC9;
+  --foreground-muted: #7A8899;
+  --background: #1A1E2E;
+  --background-secondary: #212638;
+  --background-card: #242942;
+  --background-card-hover: #2A3050;
+  --border: #313858;
+  --border-light: #2A3050;
+  --success: #64FFDA;
+  --warning: #FFD54F;
+  --destructive: #FF6B6B;
+  --shadow-color: rgba(0, 0, 0, 0.35);
+  --shadow-accent: rgba(124, 138, 255, 0.06);
+  --gradient-primary: linear-gradient(135deg, #7C8AFF 0%, #64FFDA 100%);
+  --gradient-card: none;
+  --gradient-hero: linear-gradient(160deg, #1A1E2E 0%, #1E2240 50%, #1A2E38 100%);
+  --ring: #7C8AFF;
+  --font-heading: 'Abril Fatface', serif;
+  --font-body: 'Open Sans', sans-serif;
+  --heading-letter-spacing: 0.01em;
+  --radius: 20px;
+  --radius-sm: 12px;
+  /* Neumorphic shadows */
+  --neu-shadow-raised: 6px 6px 14px rgba(0,0,0,0.4), -6px -6px 14px rgba(255,255,255,0.03);
+  --neu-shadow-inset: inset 4px 4px 10px rgba(0,0,0,0.3), inset -4px -4px 10px rgba(255,255,255,0.03);
+  --neu-shadow-subtle: 3px 3px 8px rgba(0,0,0,0.3), -3px -3px 8px rgba(255,255,255,0.02);
+}
+[data-theme="midnight-neumorphic"][data-mode="light"] {
+  --foreground: #1A1E2E;
+  --foreground-secondary: #4A5068;
+  --foreground-muted: #6B7280;
+  --background: #E8ECF4;
+  --background-secondary: #DEE3EE;
+  --background-card: #E8ECF4;
+  --background-card-hover: #EDF0F8;
+  --border: #D0D6E4;
+  --border-light: #DDE2EE;
+  --shadow-color: rgba(0, 0, 0, 0.12);
+  --gradient-card: none;
+  --gradient-hero: linear-gradient(160deg, #E8ECF4 0%, #DEE3F0 50%, #E0ECF0 100%);
+  --primary: #5A66CC;
+  --primary-hover: #4A54B0;
+  --secondary: #00BFA5;
+  --accent: #FFB300;
+  --neu-shadow-raised: 6px 6px 14px rgba(180,188,210,0.5), -6px -6px 14px rgba(255,255,255,0.8);
+  --neu-shadow-inset: inset 4px 4px 10px rgba(180,188,210,0.4), inset -4px -4px 10px rgba(255,255,255,0.7);
+  --neu-shadow-subtle: 3px 3px 8px rgba(180,188,210,0.4), -3px -3px 8px rgba(255,255,255,0.7);
+}
+
+/* --- THEME 3: Terra Sustainable --- */
+[data-theme="terra-sustainable"] {
+  --primary: #79443B;
+  --primary-hover: #643931;
+  --primary-light: #EDDDDA;
+  --primary-dark: #502D27;
+  --secondary: #4D5D53;
+  --secondary-light: #E0E5E2;
+  --accent: #D99058;
+  --accent-light: #F9EDE3;
+  --foreground: #EAE0C8;
+  --foreground-secondary: #CDB280;
+  --foreground-muted: #A89878;
+  --background: #1C1A16;
+  --background-secondary: #242018;
+  --background-card: #2A2620;
+  --background-card-hover: #322E26;
+  --border: #3E3828;
+  --border-light: #342F22;
+  --success: #6B8E5A;
+  --warning: #D99058;
+  --destructive: #C44D4D;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --shadow-accent: rgba(121, 68, 59, 0.08);
+  --gradient-primary: linear-gradient(135deg, #79443B 0%, #D99058 100%);
+  --gradient-card: none;
+  --gradient-hero: linear-gradient(160deg, #1C1A16 0%, #2A2218 50%, #1C2018 100%);
+  --ring: #D99058;
+  --font-heading: 'Staatliches', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+  --heading-letter-spacing: 0.03em;
+  --radius: 8px;
+  --radius-sm: 4px;
+}
+[data-theme="terra-sustainable"][data-mode="light"] {
+  --foreground: #2A2218;
+  --foreground-secondary: #4D5D53;
+  --foreground-muted: #79443B;
+  --background: #F7F3EC;
+  --background-secondary: #EDE7DC;
+  --background-card: #FFFFFF;
+  --background-card-hover: #FAF6F0;
+  --border: #DDD4C4;
+  --border-light: #EAE2D4;
+  --shadow-color: rgba(121, 68, 59, 0.06);
+  --gradient-card: none;
+  --gradient-hero: linear-gradient(160deg, #F7F3EC 0%, #EDE5D8 50%, #F0EDE6 100%);
+}
+
+/* ========================================================= */
+/*  BASE STYLES                                              */
+/* ========================================================= */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--font-body);
+  background: var(--background);
+  color: var(--foreground);
+  transition: background 0.4s ease, color 0.4s ease;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: var(--heading-letter-spacing);
+  line-height: 1.1;
+}
+
+/* ========================================================= */
+/*  TOP CONTROLS BAR                                         */
+/* ========================================================= */
+.controls-bar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  flex-wrap: wrap;
+  backdrop-filter: blur(12px);
+}
+.theme-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.theme-tab {
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--foreground-muted);
+  font-family: var(--font-body);
+  font-size: 14px; font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.theme-tab:hover { border-color: var(--primary); color: var(--foreground); }
+.theme-tab.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.mode-toggle {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--foreground-muted);
+}
+.mode-toggle button {
+  width: 52px; height: 28px;
+  border-radius: 14px;
+  border: none;
+  background: var(--border);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.mode-toggle button::after {
+  content: '';
+  position: absolute; top: 3px; left: 3px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--foreground);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.mode-toggle button.light-active { background: var(--primary); }
+.mode-toggle button.light-active::after { transform: translateX(24px); background: #fff; }
+
+/* ========================================================= */
+/*  THEME DESCRIPTION CARD                                   */
+/* ========================================================= */
+.theme-info {
+  max-width: 960px; margin: 32px auto; padding: 0 24px;
+}
+.theme-info-card {
+  background: var(--background-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  transition: all 0.3s ease;
+}
+[data-theme="midnight-neumorphic"] .theme-info-card {
+  border: none;
+  box-shadow: var(--neu-shadow-raised);
+}
+.theme-info-card h2 {
+  font-size: 28px; margin-bottom: 8px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.theme-info-card .subtitle {
+  font-size: 15px; color: var(--foreground-muted); margin-bottom: 16px; line-height: 1.5;
+}
+.palette-row {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px;
+}
+.palette-swatch {
+  width: 48px; height: 48px; border-radius: 10px;
+  border: 2px solid var(--border);
+  position: relative;
+  cursor: default;
+}
+.palette-swatch .tooltip {
+  position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+  background: var(--background-card);
+  border: 1px solid var(--border);
+  border-radius: 6px; padding: 4px 8px;
+  font-size: 11px; color: var(--foreground-secondary);
+  white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s;
+}
+.palette-swatch:hover .tooltip { opacity: 1; }
+.font-preview { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-light); }
+.font-preview .fp-heading { font-size: 22px; margin-bottom: 4px; }
+.font-preview .fp-body { font-size: 14px; color: var(--foreground-muted); }
+
+/* ========================================================= */
+/*  PREVIEW CONTENT                                          */
+/* ========================================================= */
+.preview-content { max-width: 960px; margin: 0 auto; padding: 0 24px 48px; }
+
+/* -- Header -- */
+.preview-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 32px;
+}
+.logo {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  letter-spacing: var(--heading-letter-spacing);
+}
+.logo span { color: var(--primary); }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a {
+  font-size: 14px; color: var(--foreground-muted);
+  text-decoration: none; font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--primary); }
+
+/* -- Hero -- */
+.hero {
+  background: var(--gradient-hero);
+  border-radius: var(--radius);
+  padding: 56px 48px;
+  text-align: center;
+  margin-bottom: 40px;
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+[data-theme="midnight-neumorphic"] .hero {
+  border: none;
+  box-shadow: var(--neu-shadow-raised);
+}
+.hero h1 {
+  font-size: 56px; margin-bottom: 16px;
+}
+[data-theme="neon-maximalist"] .hero h1 {
+  font-size: 72px;
+  text-transform: uppercase;
+}
+[data-theme="terra-sustainable"] .hero h1 {
+  font-size: 64px;
+  text-transform: uppercase;
+}
+.hero p {
+  font-size: 17px; color: var(--foreground-secondary);
+  max-width: 560px; margin: 0 auto 28px; line-height: 1.7;
+}
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px;
+  background: var(--primary);
+  color: #fff;
+  border: none; border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 15px; font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.hero-cta:hover { background: var(--primary-hover); transform: translateY(-2px); }
+[data-theme="neon-maximalist"] .hero-cta {
+  background: var(--gradient-primary);
+  border: none;
+}
+[data-theme="midnight-neumorphic"] .hero-cta {
+  box-shadow: var(--neu-shadow-subtle);
+}
+
+/* -- Stats Row -- */
+.stats-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-bottom: 40px;
+}
+.stat-card {
+  background: var(--background-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+[data-theme="midnight-neumorphic"] .stat-card {
+  border: none;
+  box-shadow: var(--neu-shadow-raised);
+}
+[data-theme="midnight-neumorphic"] .stat-card:hover {
+  box-shadow: var(--neu-shadow-subtle);
+}
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  letter-spacing: var(--heading-letter-spacing);
+  color: var(--primary);
+}
+.stat-label {
+  font-size: 13px; color: var(--foreground-muted);
+  margin-top: 4px; font-weight: 500;
+}
+
+/* -- Category Pills -- */
+.category-row {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.category-pill {
+  padding: 8px 18px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--foreground-secondary);
+  font-family: var(--font-body);
+  font-size: 13px; font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.category-pill:hover, .category-pill.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+[data-theme="midnight-neumorphic"] .category-pill {
+  border: none;
+  box-shadow: var(--neu-shadow-subtle);
+}
+[data-theme="midnight-neumorphic"] .category-pill:hover,
+[data-theme="midnight-neumorphic"] .category-pill.active {
+  box-shadow: var(--neu-shadow-inset);
+  background: var(--primary);
+  color: #fff;
+}
+
+/* -- Template Cards Grid -- */
+.templates-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  margin-bottom: 40px;
+}
+.template-card {
+  background: var(--background-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.template-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px var(--shadow-color);
+  border-color: var(--primary);
+}
+[data-theme="midnight-neumorphic"] .template-card {
+  border: none;
+  box-shadow: var(--neu-shadow-raised);
+}
+[data-theme="midnight-neumorphic"] .template-card:hover {
+  box-shadow: 8px 8px 18px rgba(0,0,0,0.5), -8px -8px 18px rgba(255,255,255,0.04);
+}
+.card-image {
+  height: 180px;
+  background: var(--gradient-hero);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.card-image .placeholder-icon {
+  font-size: 48px; opacity: 0.3;
+}
+.card-image .badge {
+  position: absolute; top: 10px; right: 10px;
+  padding: 4px 10px;
+  background: var(--accent);
+  color: #1A1A2E;
+  font-size: 11px; font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.card-body { padding: 18px; }
+.card-body h3 {
+  font-family: var(--font-body);
+  font-size: 15px; font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.card-body p {
+  font-size: 13px; color: var(--foreground-muted);
+  line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.card-tags { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
+.card-tag {
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 11px; font-weight: 500;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+[data-theme="neon-maximalist"] .card-tag,
+[data-theme="midnight-neumorphic"][data-mode="dark"] .card-tag {
+  background: rgba(124, 138, 255, 0.15);
+  color: var(--primary);
+}
+[data-theme="terra-sustainable"][data-mode="dark"] .card-tag {
+  background: rgba(217, 144, 88, 0.15);
+  color: var(--accent);
+}
+
+/* -- Footer -- */
+.preview-footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 13px; color: var(--foreground-muted);
+}
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { color: var(--foreground-muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--primary); }
+
+/* ========================================================= */
+/*  RESPONSIVE                                               */
+/* ========================================================= */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 36px !important; }
+  .stats-row { grid-template-columns: 1fr; }
+  .templates-grid { grid-template-columns: 1fr; }
+  .controls-bar { flex-direction: column; align-items: stretch; }
+  .nav-links { display: none; }
+  .preview-header .logo { font-size: 20px; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .theme-info-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Controls Bar -->
+<div class="controls-bar">
+  <div class="theme-tabs">
+    <button class="theme-tab active" data-theme-id="neon-maximalist">1 · Neon Maximalist</button>
+    <button class="theme-tab" data-theme-id="midnight-neumorphic">2 · Midnight Neumorphic</button>
+    <button class="theme-tab" data-theme-id="terra-sustainable">3 · Terra Sustainable</button>
+  </div>
+  <div class="mode-toggle">
+    <span>☀️</span>
+    <button id="modeBtn" title="Toggle light/dark mode"></button>
+    <span>🌙</span>
+  </div>
+</div>
+
+<!-- Theme Description -->
+<div class="theme-info">
+  <div class="theme-info-card" id="themeDescription"></div>
+</div>
+
+<!-- Preview Content -->
+<div class="preview-content">
+  <!-- Header -->
+  <div class="preview-header">
+    <div class="logo">best<span>email</span>template</div>
+    <div class="nav-links">
+      <a href="#">Templates</a>
+      <a href="#">Categories</a>
+      <a href="#">About</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1 id="heroTitle">575 Free HTML Email Templates</h1>
+    <p>Mobile responsive, customizable HTML email templates built on Figma for various use cases across industries.</p>
+    <button class="hero-cta">Browse Templates →</button>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value">575+</div>
+      <div class="stat-label">Free Templates</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">30+</div>
+      <div class="stat-label">Categories</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">100%</div>
+      <div class="stat-label">Responsive</div>
+    </div>
+  </div>
+
+  <!-- Category Pills -->
+  <div class="category-row">
+    <button class="category-pill active">All Templates</button>
+    <button class="category-pill">Ecommerce</button>
+    <button class="category-pill">Fashion</button>
+    <button class="category-pill">Marketing</button>
+    <button class="category-pill">SaaS</button>
+    <button class="category-pill">Travel</button>
+  </div>
+
+  <!-- Template Cards -->
+  <div class="templates-grid">
+    <div class="template-card">
+      <div class="card-image"><span class="placeholder-icon">✉️</span><span class="badge">New</span></div>
+      <div class="card-body">
+        <h3>YummyFood Create Profile HTML Email</h3>
+        <p>Streamline ordering with saved payment and address options using this responsive template.</p>
+        <div class="card-tags"><span class="card-tag">Restaurants</span><span class="card-tag">Activation</span></div>
+      </div>
+    </div>
+    <div class="template-card">
+      <div class="card-image"><span class="placeholder-icon">📦</span></div>
+      <div class="card-body">
+        <h3>YETI King Crab Collection Launch</h3>
+        <p>Bold design highlights durability and standout gear for outdoor enthusiasts.</p>
+        <div class="card-tags"><span class="card-tag">Ecommerce</span><span class="card-tag">Product Launch</span></div>
+      </div>
+    </div>
+    <div class="template-card">
+      <div class="card-image"><span class="placeholder-icon">🎄</span><span class="badge">Popular</span></div>
+      <div class="card-body">
+        <h3>Yearly Mega Offer Ecommerce Sale</h3>
+        <p>Festive skincare brand Boxing Week Sale with BOGO deals and colorful design.</p>
+        <div class="card-tags"><span class="card-tag">Boxing Day</span><span class="card-tag">Festive</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="preview-footer">
+    <span>© 2026 Best Email Template</span>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const themes = {
+  'neon-maximalist': {
+    name: 'Neon Maximalist',
+    subtitle: 'Inspired by 2026 trends: Vibrant Color Palettes (Trend 3), Bold Typography (Trend 4), and Maximalism (Trend 10). This theme embraces high-energy, saturated neon gradients with condensed all-caps headlines for maximum impact. Perfect for an email template marketplace that wants to feel bold, creative, and cutting-edge.',
+    colors: [
+      { hex: '#BF00FF', label: 'Primary – Hyper Magenta' },
+      { hex: '#FC0FC0', label: 'Secondary – Shocking Pink' },
+      { hex: '#FFBF00', label: 'Accent – Amber Gold' },
+      { hex: '#0A0A1A', label: 'Background (Dark)' },
+      { hex: '#FAF8FF', label: 'Background (Light)' },
+      { hex: '#F8FAFC', label: 'Foreground (Dark mode)' },
+    ],
+    fonts: { heading: 'Bebas Neue', body: 'Source Sans 3' },
+    traits: ['Neon gradients', 'All-caps headlines', 'High contrast', 'Dark-first']
+  },
+  'midnight-neumorphic': {
+    name: 'Midnight Neumorphic',
+    subtitle: 'Inspired by 2026 trends: Neumorphism (Trend 8), Dark Mode (Trend 5), and Motion Design (Trend 6). Soft, tactile shadows create depth on a cool midnight canvas. The editorial serif heading font (Abril Fatface) paired with clean Open Sans delivers premium sophistication. Ideal for a template marketplace that wants to feel refined and modern.',
+    colors: [
+      { hex: '#7C8AFF', label: 'Primary – Soft Indigo' },
+      { hex: '#64FFDA', label: 'Secondary – Mint Glow' },
+      { hex: '#FFD54F', label: 'Accent – Warm Gold' },
+      { hex: '#1A1E2E', label: 'Background (Dark)' },
+      { hex: '#E8ECF4', label: 'Background (Light)' },
+      { hex: '#E8ECF1', label: 'Foreground (Dark mode)' },
+    ],
+    fonts: { heading: 'Abril Fatface', body: 'Open Sans' },
+    traits: ['Neumorphic shadows', 'Tactile UI', 'Serif headlines', 'Cool tones']
+  },
+  'terra-sustainable': {
+    name: 'Terra Sustainable',
+    subtitle: 'Inspired by 2026 trends: Sustainable Web Design (Trend 13), Bold Typography (Trend 4), and Retrofuturism (Trend 9). Earthy terracotta and granite tones create a grounded, nature-inspired palette. Condensed industrial headers (Staatliches) paired with the workhorse Work Sans deliver clarity and accessibility. Great for a marketplace that values authenticity and readability.',
+    colors: [
+      { hex: '#79443B', label: 'Primary – Clay Soil' },
+      { hex: '#4D5D53', label: 'Secondary – Granite' },
+      { hex: '#D99058', label: 'Accent – Toasted Almond' },
+      { hex: '#1C1A16', label: 'Background (Dark)' },
+      { hex: '#F7F3EC', label: 'Background (Light)' },
+      { hex: '#EAE0C8', label: 'Foreground (Dark mode)' },
+    ],
+    fonts: { heading: 'Staatliches', body: 'Work Sans' },
+    traits: ['Earthy palette', 'High readability', 'Accessible', 'Minimal radius']
+  }
+};
+
+let currentTheme = 'neon-maximalist';
+let currentMode = 'dark';
+
+function setTheme(themeId) {
+  currentTheme = themeId;
+  document.documentElement.setAttribute('data-theme', themeId);
+  document.documentElement.setAttribute('data-mode', currentMode);
+  
+  // Update tabs
+  document.querySelectorAll('.theme-tab').forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.themeId === themeId);
+  });
+  
+  // Update description
+  const t = themes[themeId];
+  const descEl = document.getElementById('themeDescription');
+  descEl.innerHTML = `
+    <h2>${t.name}</h2>
+    <div class="subtitle">${t.subtitle}</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+      ${t.traits.map(trait => `<span style="padding:3px 10px;border-radius:50px;font-size:11px;font-weight:600;background:var(--primary-light);color:var(--primary-dark);">${trait}</span>`).join('')}
+    </div>
+    <div class="palette-row">
+      ${t.colors.map(c => `<div class="palette-swatch" style="background:${c.hex};"><div class="tooltip">${c.label}</div></div>`).join('')}
+    </div>
+    <div class="font-preview">
+      <div class="fp-heading" style="font-family:${t.fonts.heading === 'Abril Fatface' ? "'Abril Fatface', serif" : `'${t.fonts.heading}', sans-serif`};">Heading: ${t.fonts.heading}</div>
+      <div class="fp-body">Body: ${t.fonts.body} — The quick brown fox jumps over the lazy dog.</div>
+    </div>
+  `;
+}
+
+function toggleMode() {
+  currentMode = currentMode === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-mode', currentMode);
+  document.getElementById('modeBtn').classList.toggle('light-active', currentMode === 'light');
+}
+
+// Event listeners
+document.querySelectorAll('.theme-tab').forEach(tab => {
+  tab.addEventListener('click', () => setTheme(tab.dataset.themeId));
+});
+document.getElementById('modeBtn').addEventListener('click', toggleMode);
+
+// Category pill click
+document.querySelectorAll('.category-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+  });
+});
+
+// Initialize
+setTheme('neon-maximalist');
+</script>
+</body>
+</html>

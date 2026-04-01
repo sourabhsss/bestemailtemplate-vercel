@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { getTemplates, getCategories } from '@/lib/templates-data';
 import { CategoryPageClient } from '@/components/CategoryPageClient';
+import { CategoryHeader } from '@/components/CategoryHeader';
 import { slugify } from '@/lib/slug-utils';
 import { Metadata } from 'next';
 
@@ -158,7 +159,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       <div className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-4 py-4">
           <div className="flex items-center gap-2 text-sm">
-            <Link href="/templates" className="text-primary hover:underline">
+            <Link href="/" className="text-primary hover:underline">
               Email Templates
             </Link>
             <span className="text-muted-foreground">&gt;</span>
@@ -169,19 +170,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
       <main className="flex-1">
         {/* Category Header */}
-        <section className="py-12 px-4 bg-muted/30">
-          <div className="mx-auto max-w-7xl text-center">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
-              {displayTitle} Email Templates
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              {displayDescription}
-            </p>
-            <p className="text-sm text-muted-foreground mt-2">
-              {categoryTemplates.length} templates available
-            </p>
-          </div>
-        </section>
+        <CategoryHeader
+          title={displayTitle.toLowerCase().includes('email templates') ? displayTitle : `${displayTitle} Email Templates`}
+          description={displayDescription}
+          templateCount={categoryTemplates.length}
+        />
 
         <CategoryPageClient 
           templates={categoryTemplates} 

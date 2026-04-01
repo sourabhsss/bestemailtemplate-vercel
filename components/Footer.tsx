@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border/50 bg-gradient-to-br from-secondary/30 via-background to-secondary/30">
+    <footer className="relative border-t border-border/50 bg-gradient-to-br from-secondary/30 via-background to-secondary/30 bg-crosshatch bg-noise">
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent pointer-events-none"></div>
       
@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand Column */}
           <div className="md:col-span-1">
-            <Link href="/templates" className="flex items-center gap-2 group mb-4 transition-smooth hover:scale-105">
+            <Link href="/" className="flex items-center gap-2 group mb-4 transition-smooth hover:scale-105">
               <span className="heading-sm text-foreground group-hover:text-primary">
                 best<span className="gradient-text">email</span>template
               </span>
@@ -24,7 +24,7 @@ export function Footer() {
             <h3 className="heading-sm text-foreground mb-4">Templates</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/templates" className="body-sm text-muted-foreground hover:text-primary transition-smooth hover:translate-x-1 inline-block">
+                <Link href="/" className="body-sm text-muted-foreground hover:text-primary transition-smooth hover:translate-x-1 inline-block">
                   All Templates
                 </Link>
               </li>

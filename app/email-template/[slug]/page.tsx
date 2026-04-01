@@ -79,14 +79,14 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
     .slice(0, 15);
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background bg-topographic">
       <Header />
       
       {/* Breadcrumb */}
       <div className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 py-4">
           <div className="flex items-center gap-2 text-sm">
-            <Link href="/templates" className="text-primary hover:underline">
+            <Link href="/" className="text-primary hover:underline">
               Email Templates
             </Link>
             <span className="text-muted-foreground">&gt;</span>
@@ -108,7 +108,7 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
             {/* Left Column - Template Preview */}
             <div className="flex justify-center lg:justify-start">
               <div className="relative w-full max-w-md">
-                <div className="relative aspect-[3/4] rounded-lg overflow-y-auto overflow-x-hidden border border-primary/20 shadow-lg">
+                <div className="relative aspect-[3/4] rounded-none overflow-y-auto overflow-x-hidden border-l-[3px] border-l-primary border border-primary/20 shadow-lg">
                   <Image
                     src={template.thumbnailUrl}
                     alt={template.title}

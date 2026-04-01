@@ -24,7 +24,7 @@ export function TemplatesPageClient({ templates }: TemplatesPageClientProps) {
   const paginatedTemplates = templates.slice(startIndex, endIndex);
 
   return (
-    <section className="pt-12 pb-12 px-4 bg-gradient-to-r from-secondary/20 via-background to-secondary/20">
+    <section className="pt-12 pb-12 px-4 bg-gradient-to-r from-secondary/20 via-background to-secondary/20 bg-dot-grid">
       <div className="mx-auto max-w-7xl">
         <TemplateFilters
           filterOptions={filterOptions}
