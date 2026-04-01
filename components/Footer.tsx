@@ -60,6 +60,11 @@ export function Footer() {
                   Terms & Conditions
                 </Link>
               </li>
+              <li>
+                <Link href="/contact" className="body-sm text-muted-foreground hover:text-primary transition-smooth hover:translate-x-1 inline-block">
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
