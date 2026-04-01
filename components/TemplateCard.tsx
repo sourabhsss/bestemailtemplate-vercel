@@ -17,13 +17,15 @@ interface TemplateCardProps {
   useCase?: string;
   type?: string;
   showTags?: boolean;
+  priority?: boolean;
 }
 
 export function TemplateCard({ 
   id, 
   title, 
   description, 
-  thumbnailUrl
+  thumbnailUrl,
+  priority = false,
 }: TemplateCardProps) {
   return (
     <Card className="group cursor-pointer overflow-hidden transition-smooth hover-lift bg-card card-shadow-lg hover:card-shadow-xl p-0">
@@ -36,7 +38,8 @@ export function TemplateCard({
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover object-top transition-smooth group-hover:scale-105"
-            priority={false}
+            loading={priority ? "eager" : "lazy"}
+            priority={priority}
           />
           
           {/* Permanent Bottom Shadow - Always Visible */}

@@ -24,7 +24,7 @@ export function TemplatesPageClient({ templates }: TemplatesPageClientProps) {
   const paginatedTemplates = templates.slice(startIndex, endIndex);
 
   return (
-    <section className="pt-12 pb-12 px-4 bg-gradient-to-r from-secondary/20 via-background to-secondary/20 bg-dot-grid">
+    <section className="pt-12 pb-12 px-4 bg-gradient-to-r from-secondary/20 via-background to-secondary/20 bg-topographic">
       <div className="mx-auto max-w-7xl">
         <TemplateFilters
           filterOptions={filterOptions}
@@ -39,7 +39,7 @@ export function TemplatesPageClient({ templates }: TemplatesPageClientProps) {
         {paginatedTemplates.length > 0 ? (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-              {paginatedTemplates.map((template) => (
+              {paginatedTemplates.map((template, index) => (
               <TemplateCard
                 key={template.id}
                 id={template.slug || template.id}
@@ -52,6 +52,7 @@ export function TemplatesPageClient({ templates }: TemplatesPageClientProps) {
                 useCase={template.useCase}
                 type={template.type}
                 showTags={true}
+                priority={index < 4}
               />
               ))}
             </div>

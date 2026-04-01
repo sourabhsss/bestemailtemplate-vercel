@@ -35,13 +35,13 @@ export function CategoryPageClient({ templates, allTemplates }: CategoryPageClie
       />
       
       {/* Template Grid */}
-      <section className="py-12 px-4">
+      <section className="py-12 px-4 bg-topographic">
         <div className="mx-auto max-w-7xl">
           <h2 className="sr-only">Browse Templates</h2>
           {paginatedTemplates.length > 0 ? (
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
-                {paginatedTemplates.map((template) => (
+                {paginatedTemplates.map((template, index) => (
                 <TemplateCard
                   key={template.id}
                   id={template.slug || template.id}
@@ -54,6 +54,7 @@ export function CategoryPageClient({ templates, allTemplates }: CategoryPageClie
                   useCase={template.useCase}
                   type={template.type}
                   showTags={true}
+                  priority={index < 4}
                 />
                 ))}
               </div>

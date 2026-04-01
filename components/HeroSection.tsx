@@ -17,7 +17,7 @@ export function HeroSection() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           {/* Main Heading with Flip Words */}
-          <h1 className="heading-hero text-foreground mb-6 text-balance">
+          <h1 className="heading-hero text-foreground mb-6 text-balance max-w-2xl mx-auto" style={{ minHeight: "2.2em" }}>
             575
             <FlipWords words={flipCategories} duration={3000} className="text-primary" />
             HTML Email Templates

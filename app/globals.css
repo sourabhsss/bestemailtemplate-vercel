@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Work+Sans:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @theme inline {
   /* Base colors */
@@ -312,84 +310,6 @@
   --shadow-xl: 0 20px 25px -5px rgba(139, 58, 47, 0.18);
 }
 
-.dark {
-  /* Background colors */
-  --background: #1C1A16;
-  --background-secondary: #242018;
-  --background-tertiary: #2C2820;
-  --foreground: #EAE0C8;
-  --foreground-secondary: #CDB280;
-  --foreground-muted: #A89878;
-  
-  /* Card colors */
-  --card: #2A2620;
-  --card-foreground: #EAE0C8;
-  --card-hover: #322E26;
-  
-  /* Popover colors */
-  --popover: #2A2620;
-  --popover-foreground: #EAE0C8;
-  
-  /* Primary color */
-  --primary: #E07830;
-  --primary-foreground: #1C1A16;
-  
-  /* Secondary colors */
-  --secondary: #322E26;
-  --secondary-foreground: #EAE0C8;
-  
-  /* Muted colors */
-  --muted: #2A2620;
-  --muted-foreground: #A89878;
-  
-  /* Accent colors */
-  --accent: #8B3A2F;
-  --accent-foreground: #EAE0C8;
-  
-  /* Destructive colors */
-  --destructive: #C44D4D;
-  --destructive-foreground: #EAE0C8;
-  
-  /* Border and input */
-  --border: #3E3828;
-  --border-light: #342F22;
-  --border-dark: #4A4232;
-  --input: #3E3828;
-  --input-focus: #E07830;
-  --ring: #E07830;
-  
-  /* Gradient colors */
-  --gradient-start: #E07830;
-  --gradient-middle: #C45F1A;
-  --gradient-end: #8B3A2F;
-  
-  /* Glass effect */
-  --glass-bg: rgba(42, 38, 32, 0.7);
-  --glass-border: rgba(62, 56, 40, 0.4);
-  
-  /* Chart colors */
-  --chart-1: #E07830;
-  --chart-2: #8B3A2F;
-  --chart-3: #6B8E5A;
-  --chart-4: #CDB280;
-  --chart-5: #5A7A8E;
-  
-  /* Sidebar colors */
-  --sidebar: #242018;
-  --sidebar-foreground: #EAE0C8;
-  --sidebar-primary: #E07830;
-  --sidebar-primary-foreground: #1C1A16;
-  --sidebar-accent: #322E26;
-  --sidebar-accent-foreground: #EAE0C8;
-  --sidebar-border: #3E3828;
-  --sidebar-ring: #E07830;
-  
-  /* Neumorphic shadows (dark mode) */
-  --neu-shadow-raised: 6px 6px 14px rgba(0, 0, 0, 0.4), -6px -6px 14px rgba(255, 255, 255, 0.03);
-  --neu-shadow-inset: inset 4px 4px 10px rgba(0, 0, 0, 0.3), inset -4px -4px 10px rgba(255, 255, 255, 0.03);
-  --neu-shadow-subtle: 3px 3px 8px rgba(0, 0, 0, 0.3), -3px -3px 8px rgba(255, 255, 255, 0.02);
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -400,14 +320,14 @@
   
   body {
     @apply bg-background text-foreground;
-    font-family: 'Work Sans', sans-serif;
+    font-family: var(--font-work-sans), 'Work Sans', sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Staatliches', sans-serif;
+    font-family: var(--font-staatliches), 'Staatliches', sans-serif;
     font-weight: 400;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -426,7 +346,7 @@
   line-height: 1.1;
   font-weight: 400;
   letter-spacing: 0.04em;
-  font-family: 'Staatliches', sans-serif;
+  font-family: var(--font-staatliches), 'Staatliches', sans-serif;
   text-transform: uppercase;
 }
 
@@ -435,7 +355,7 @@
   line-height: 1.2;
   font-weight: 400;
   letter-spacing: 0.03em;
-  font-family: 'Staatliches', sans-serif;
+  font-family: var(--font-staatliches), 'Staatliches', sans-serif;
   text-transform: uppercase;
 }
 
@@ -444,7 +364,7 @@
   line-height: 1.25;
   font-weight: 400;
   letter-spacing: 0.03em;
-  font-family: 'Staatliches', sans-serif;
+  font-family: var(--font-staatliches), 'Staatliches', sans-serif;
   text-transform: uppercase;
 }
 
@@ -453,7 +373,7 @@
   line-height: 1.3;
   font-weight: 400;
   letter-spacing: 0.03em;
-  font-family: 'Staatliches', sans-serif;
+  font-family: var(--font-staatliches), 'Staatliches', sans-serif;
   text-transform: uppercase;
 }
 
@@ -462,7 +382,7 @@
   line-height: 1.35;
   font-weight: 400;
   letter-spacing: 0.02em;
-  font-family: 'Staatliches', sans-serif;
+  font-family: var(--font-staatliches), 'Staatliches', sans-serif;
   text-transform: uppercase;
 }
 
