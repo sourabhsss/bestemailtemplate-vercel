@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, FormEvent, useCallback, useEffect } from 'react';
+import { useState, FormEvent, useRef } from 'react';
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -8,7 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
-const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 interface FormState {
   name: string;
@@ -23,39 +24,8 @@ export function ContactForm() {
   const [status, setStatus] = useState<SubmitStatus>('idle');
   const [statusMessage, setStatusMessage] = useState('');
   const [honeypot, setHoneypot] = useState('');
-
-  // Load reCAPTCHA script
-  useEffect(() => {
-    if (!RECAPTCHA_SITE_KEY) return;
-
-    const existingScript = document.querySelector(`script[src*="recaptcha"]`);
-    if (existingScript) return;
-
-    const script = document.createElement('script');
-    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
-    script.async = true;
-    document.head.appendChild(script);
-  }, []);
-
-  const getRecaptchaToken = useCallback(async (): Promise<string | null> => {
-    if (!RECAPTCHA_SITE_KEY) return null;
-
-    try {
-      const grecaptcha = (window as unknown as Record<string, unknown>).grecaptcha as {
-        ready: (cb: () => void) => void;
-        execute: (key: string, options: { action: string }) => Promise<string>;
-      };
-
-      return new Promise((resolve) => {
-        grecaptcha.ready(async () => {
-          const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact' });
-          resolve(token);
-        });
-      });
-    } catch {
-      return null;
-    }
-  }, []);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance | null>(null);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -63,18 +33,22 @@ export function ContactForm() {
     // Honeypot check
     if (honeypot) return;
 
+    if (!turnstileToken) {
+      setStatus('error');
+      setStatusMessage('Please complete the verification challenge.');
+      return;
+    }
+
     setStatus('loading');
     setStatusMessage('');
 
     try {
-      const recaptchaToken = await getRecaptchaToken();
-
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...form,
-          recaptchaToken,
+          turnstileToken,
         }),
       });
 
@@ -91,6 +65,10 @@ export function ContactForm() {
     } catch {
       setStatus('error');
       setStatusMessage('Network error. Please check your connection and try again.');
+    } finally {
+      // Reset Turnstile for next submission
+      setTurnstileToken(null);
+      turnstileRef.current?.reset();
     }
   };
 
@@ -163,6 +141,24 @@ export function ContactForm() {
               {form.message.length}/5000
             </p>
           </div>
+
+          {/* Cloudflare Turnstile widget */}
+          {TURNSTILE_SITE_KEY && (
+            <div className="flex justify-center">
+              <Turnstile
+                ref={turnstileRef}
+                siteKey={TURNSTILE_SITE_KEY}
+                onSuccess={(token) => setTurnstileToken(token)}
+                onError={() => {
+                  setTurnstileToken(null);
+                  setStatus('error');
+                  setStatusMessage('Verification failed. Please try again.');
+                }}
+                onExpire={() => setTurnstileToken(null)}
+                options={{ theme: 'auto', size: 'flexible' }}
+              />
+            </div>
+          )}
 
           <Button
             type="submit"
