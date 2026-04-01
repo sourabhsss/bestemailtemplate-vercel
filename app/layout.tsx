@@ -11,6 +11,11 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bestemailtemplate.com'),
+  icons: {
+    icon: '/bestemailtemplate.jpg',
+    shortcut: '/bestemailtemplate.jpg',
+    apple: '/bestemailtemplate.jpg',
+  },
   title: {
     default: "575 Free HTML Email Templates | Best Email Template",
     template: "%s | Best Email Template"
