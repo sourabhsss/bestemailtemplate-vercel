@@ -31,12 +31,12 @@ export function TemplateFilters({
     <div className="bg-background border-b border-border bg-linen" id="templates">
       <div className="mx-auto max-w-7xl px-4">
         {/* Top Category Buttons */}
-        <div className={`flex items-center justify-center gap-6 py-4 ${isExpanded ? 'border-b border-border' : ''}`}>
+        <div className={`flex items-center justify-center gap-3 sm:gap-6 py-4 flex-wrap ${isExpanded ? 'border-b border-border' : ''}`}>
           {topCategories.map((category) => (
             <Link key={category} href={`/templates/${slugify(category)}`}>
               <Button
                 variant="outline"
-                className="px-6 py-2 text-sm font-medium border-border text-foreground hover:bg-primary hover:text-primary-foreground"
+                className="px-4 sm:px-6 py-2 text-sm font-medium border-border text-foreground hover:bg-primary hover:text-primary-foreground"
               >
                 {category}
               </Button>
@@ -44,7 +44,7 @@ export function TemplateFilters({
           ))}
           <Button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="ml-4 bg-primary hover:bg-primary/90 text-primary-foreground"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground"
           >
             More Collections
             {isExpanded ? (
@@ -58,7 +58,7 @@ export function TemplateFilters({
         {/* Expanded Filter Menu */}
         {isExpanded && (
           <div className="pb-8 pt-4">
-            <div className="grid grid-cols-6 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
               {/* Use Case Column 1 */}
               <div>
                 <h3 className="text-sm font-semibold text-foreground mb-4 pb-2 border-b-2 border-primary">
@@ -80,8 +80,8 @@ export function TemplateFilters({
 
               {/* Use Case Column 2 */}
               <div>
-                <h3 className="text-sm font-semibold text-foreground mb-4 pb-2 border-b-2 border-transparent opacity-0">
-                  Use Case
+                <h3 className="text-sm font-semibold text-foreground mb-4 pb-2 border-b-2 border-primary sm:border-transparent sm:opacity-0 lg:border-transparent lg:opacity-0">
+                  <span className="sm:invisible">Use Case</span>&nbsp;
                 </h3>
                 <ul className="space-y-2">
                   {useCasesCol2.map((useCase) => (

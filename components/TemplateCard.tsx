@@ -31,7 +31,7 @@ export function TemplateCard({
     <Card className="group cursor-pointer overflow-hidden transition-smooth hover-lift bg-card card-shadow-lg hover:card-shadow-xl p-0">
       <CardContent className="p-0 relative">
         {/* Image Container - Full height */}
-        <div className="relative h-[500px] bg-muted overflow-hidden">
+        <div className="relative h-[350px] sm:h-[400px] lg:h-[500px] bg-muted overflow-hidden">
           <Image
             src={thumbnailUrl}
             alt={title}
