@@ -35,6 +35,7 @@ export function TemplatesPageClient({ templates }: TemplatesPageClientProps) {
         
         {/* Template Grid */}
         <div className="mt-12">
+        <h2 className="sr-only">Browse Email Templates</h2>
         {paginatedTemplates.length > 0 ? (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">

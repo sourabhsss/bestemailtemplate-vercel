@@ -68,7 +68,7 @@ export function Footer() {
         <div className="pt-8 border-t border-border/50">
           <div className="flex justify-center">
             <p className="body-sm text-muted-foreground">
-              Copyright © bestemailtemplate
+              Copyright © {new Date().getFullYear()} bestemailtemplate
             </p>
           </div>
         </div>

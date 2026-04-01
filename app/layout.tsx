@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import Script from "next/script";
+import { getOrganizationSchema, getWebSiteSchema } from "@/lib/structured-data";
 import "./globals.css";
 
 const workSans = Work_Sans({
@@ -11,6 +12,9 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bestemailtemplate.com'),
+  other: {
+    'theme-color': '#6B4C3B',
+  },
   icons: {
     icon: '/bestemailtemplate.jpg',
     shortcut: '/bestemailtemplate.jpg',
@@ -43,11 +47,20 @@ export const metadata: Metadata = {
     siteName: "Best Email Template",
     title: "575 Free HTML Email Templates | Best Email Template",
     description: "Mobile responsive, customizable HTML email templates built on Figma for various use cases across industries.",
+    images: [
+      {
+        url: '/bestemailtemplate.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Best Email Template - Free HTML Email Templates',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "575 Free HTML Email Templates | Best Email Template",
     description: "Mobile responsive, customizable HTML email templates built on Figma for various use cases across industries.",
+    images: ['/bestemailtemplate.jpg'],
   },
 };
 
@@ -61,6 +74,20 @@ export default function RootLayout({
       <body
         className={`${workSans.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              getOrganizationSchema(),
+              getWebSiteSchema(),
+            ]),
+          }}
+        />
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8630405999832993"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-GJWCKHLJQ9"
           strategy="afterInteractive"

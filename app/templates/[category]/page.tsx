@@ -6,6 +6,7 @@ import { getTemplates, getCategories } from '@/lib/templates-data';
 import { CategoryPageClient } from '@/components/CategoryPageClient';
 import { CategoryHeader } from '@/components/CategoryHeader';
 import { slugify } from '@/lib/slug-utils';
+import { getCategoryPageSchema, getBreadcrumbSchema } from '@/lib/structured-data';
 import { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -153,20 +154,34 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
   return (
     <div className="min-h-screen flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            getCategoryPageSchema(displayTitle, displayDescription, categorySlug, categoryTemplates.length),
+            getBreadcrumbSchema([
+              { name: 'Email Templates', url: '/' },
+              { name: displayTitle },
+            ]),
+          ]),
+        }}
+      />
       <Header />
       
       {/* Breadcrumb */}
-      <div className="border-b border-border bg-background">
+      <nav aria-label="Breadcrumb" className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-4 py-4">
-          <div className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-primary hover:underline">
-              Email Templates
-            </Link>
-            <span className="text-muted-foreground">&gt;</span>
-            <span className="text-foreground">{displayTitle}</span>
-          </div>
+          <ol className="flex items-center gap-2 text-sm list-none m-0 p-0">
+            <li>
+              <Link href="/" className="text-primary hover:underline">
+                Email Templates
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-muted-foreground">&gt;</li>
+            <li aria-current="page" className="text-foreground">{displayTitle}</li>
+          </ol>
         </div>
-      </div>
+      </nav>
 
       <main className="flex-1">
         {/* Category Header */}

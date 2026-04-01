@@ -10,6 +10,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Mail, Tag, Briefcase, Zap, Monitor } from 'lucide-react';
 import { slugify } from '@/lib/slug-utils';
+import { getTemplateDetailSchema, getBreadcrumbSchema } from '@/lib/structured-data';
 import { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -80,27 +81,44 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
 
   return (
     <div className="min-h-screen flex flex-col bg-background bg-topographic">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            getTemplateDetailSchema(template),
+            getBreadcrumbSchema([
+              { name: 'Email Templates', url: '/' },
+              { name: template.useCase, url: `/templates/${slugify(template.useCase)}` },
+              { name: template.title },
+            ]),
+          ]),
+        }}
+      />
       <Header />
       
       {/* Breadcrumb */}
-      <div className="border-b border-border">
+      <nav aria-label="Breadcrumb" className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 py-4">
-          <div className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-primary hover:underline">
-              Email Templates
-            </Link>
-            <span className="text-muted-foreground">&gt;</span>
-            <Link 
-              href={`/templates/${slugify(template.useCase)}`} 
-              className="text-primary hover:underline"
-            >
-              {template.useCase}
-            </Link>
-            <span className="text-muted-foreground">&gt;</span>
-            <span className="text-foreground">{template.title}</span>
-          </div>
+          <ol className="flex items-center gap-2 text-sm list-none m-0 p-0">
+            <li>
+              <Link href="/" className="text-primary hover:underline">
+                Email Templates
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-muted-foreground">&gt;</li>
+            <li>
+              <Link 
+                href={`/templates/${slugify(template.useCase)}`} 
+                className="text-primary hover:underline"
+              >
+                {template.useCase}
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-muted-foreground">&gt;</li>
+            <li aria-current="page" className="text-foreground">{template.title}</li>
+          </ol>
         </div>
-      </div>
+      </nav>
 
       <main className="flex-1">
         <div className="mx-auto max-w-7xl px-4 py-12">

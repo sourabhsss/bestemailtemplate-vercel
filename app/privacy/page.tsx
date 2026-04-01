@@ -1,5 +1,6 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { getWebPageSchema } from '@/lib/structured-data';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,6 +14,14 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            getWebPageSchema('Privacy Policy & Consent', 'Privacy policy and consent information for Best Email Template.', '/privacy')
+          ),
+        }}
+      />
       <Header />
       
       <main className="flex-1">
